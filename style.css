@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
+}
+h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0 auto;
+  padding: 0;
+  /* color: #0000; */
+  margin-top: 40px;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+  padding: 20px;
+}
+h1::after {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: red;
+  z-index: -1;
+  transform: skew(-333deg);
+  animation: change-background-color 3s;
+  -webkit-animation: change-background-color 3s;
+}
+h1::before {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: red;
+  z-index: -1;
+  transform: skew(333deg);
+  animation: change-background-color 3s;
+  -webkit-animation: change-background-color 3s;
+}
+@keyframes change-background-color {
+  0% {
+    background-color: #f00;
+  }
+  50% {
+    background-color: #000;
+  }
+  100% {
+    background-color: #f00;
+  }
+}
+.a {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.x {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgb(69, 7, 201);
+  border-left-color: transparent;
+  /* transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s; */
+  transform: rotate(1turn);
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+* {
+  background-color: #333;
+}
+.loading {
+  width: 40rem;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+}
+.loading div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  animation-name: up-and-down;
+  animation-duration: 0.9s;
+  /* animation-timing-function: linear; */
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.two {
+  animation-delay: 0.3s;
+}
+.three {
+  animation-delay: 0.6s;
+}
+@keyframes up-and-down {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+    transform: translate(0, -20px);
+    -webkit-transform: translate(0, -20px);
+    -moz-transform: translate(0, -20px);
+    -ms-transform: translate(0, -20px);
+    -o-transform: translate(0, -20px);
+  }
+}
+.txt {
+  position: relative;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 20rem auto;
+  background-color: red;
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ffff;
+}
+.txt::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -15%;
+  width: 10px;
+  height: 10px;
+  background-color: #ffff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  /*background-color: #ccc;
+  */
+  transition: 0.3s;
+
+  z-index: 1;
+}
+.txt::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -15%;
+  width: 10px;
+  height: 10px;
+  background-color: #ffff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: 0.3s;
+  /*background-color: #ccc;
+  */
+  z-index: 1;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.txt:hover::before {
+  height: 100%;
+  width: 50%;
+  left: 0;
+  top: 0;
+  transform: translate(0);
+  -webkit-transform: translate(0);
+  -moz-transform: translate(0);
+  -ms-transform: translate(0);
+  -o-transform: translate(0);
+  border-top-left-radius: inherit;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: inherit;
+}
+.txt:hover::after {
+  height: 100%;
+  width: 50%;
+  right: 0;
+  top: 0;
+  transform: translate(0);
+  -webkit-transform: translate(0);
+  -moz-transform: translate(0);
+  -ms-transform: translate(0);
+  -o-transform: translate(0);
+  border-top-left-radius: 0;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: 0;
+}
+.txt p {
+  z-index: 110;
+  position: relative;
+  background-color: transparent;
+  color: blueviolet;
+}
